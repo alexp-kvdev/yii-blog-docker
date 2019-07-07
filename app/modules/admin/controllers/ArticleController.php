@@ -138,7 +138,11 @@ class ArticleController extends Controller
 
             $fileName = $model->uploadFile($file, $article->image);
 
-            $article->saveImage($fileName);
+            if($article->saveImage($fileName)){
+
+                return $this->redirect(['view','id'=>$article->id]);
+            }
+
         }
 
         return $this->render('image',['model' => $model]);

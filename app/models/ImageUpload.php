@@ -55,4 +55,3 @@ class ImageUpload extends Model{
     }
 }
 
-//TODO 8 22:53
